@@ -4,7 +4,7 @@ from sklearn.model_selection import train_test_split
 from transformers import BertTokenizer, BertForSequenceClassification, Trainer, TrainingArguments
 from datasets import Dataset, DatasetDict
 
-df = pd.read_excel('dc_bot/BERT_training_data.xlsx')
+df = pd.read_excel('BERT_training_data.xlsx')
 df = df.rename(columns={'text': 'sentence', 'label': 'emotion'})
 
 df['sentence'] = df['sentence'].fillna('').astype(str)
@@ -58,6 +58,6 @@ trainer = Trainer(
 
 trainer.train()
 
-torch.save(model.state_dict(), 'dc_bot/bert_emotion_model.pth')
-model.save_pretrained('dc_bot/bert_emotion_model')
-tokenizer.save_pretrained('dc_bot/bert_emotion_model')
+torch.save(model.state_dict(), 'bert_emotion_model.pth')
+model.save_pretrained('bert_emotion_model')
+tokenizer.save_pretrained('bert_emotion_model')

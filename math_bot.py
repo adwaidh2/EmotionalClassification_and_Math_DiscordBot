@@ -9,11 +9,11 @@ from discord.ext import commands, tasks
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 
-load_dotenv(dotenv_path='dc_bot/bot_token.env')
+load_dotenv(dotenv_path='bot_token.env')
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
 
-model = BertForSequenceClassification.from_pretrained('dc_bot/bert_emotion_model')
-tokenizer = BertTokenizer.from_pretrained('dc_bot/bert_emotion_model')
+model = BertForSequenceClassification.from_pretrained('bert_emotion_model')
+tokenizer = BertTokenizer.from_pretrained('bert_emotion_model')
 
 emotion_to_emoji = {
     'Positive': '👍',
@@ -21,7 +21,7 @@ emotion_to_emoji = {
     'Negative': '👎'
 }
 
-with open('dc_bot/server_channel.json', encoding='utf-8') as f:
+with open('server_channel.json', encoding='utf-8') as f:
     jdata: dict[str, int] = json.load(f)
 
 intents = discord.Intents.default()

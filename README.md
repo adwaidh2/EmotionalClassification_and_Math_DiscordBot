@@ -6,7 +6,7 @@
 - Discord Bot（擁有 Token，並將它拉進 Discord 伺服器中）
 > 不會建立 Bot 的話，可以依[這條影片](https://youtu.be/equ42VBYPrc?si=_81b7t4MDZGZwqs7)來操作
 ### Python 虛擬環境（Venv）與套件
-1. 請先把本專案（dc_bot 資料夾）clone 下來後，建立一個 Venv
+1. 請先把本專案 clone 下來後，建立一個 Venv
 2. 若有提示要安裝 `requirements.txt` 中的內容，安裝；否則在建立完 Venv 後，使用以下指令安裝
 ```bash
 pip install -r requirements.txt
