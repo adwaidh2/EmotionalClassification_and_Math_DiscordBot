@@ -1,0 +1,22 @@
+# 模型資料
+bert_emotion_model.pth
+bert_emotion_model/
+
+# 真實的訓練資料
+BERT_training_data.xlsx
+
+# 環境變數
+bot_token.env
+
+# 頻道 ID
+server_channel.json
+
+# Python 暫存檔
+__pycache__/
+*.pyc
+
+# IDE/OS 雜項
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
