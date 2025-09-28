@@ -37,8 +37,21 @@ async def check_channel(ctx) -> bool:
             channel_id = jdata['COMMAND']
 
     if ctx.channel.id != channel_id:
-        await ctx.send(f'請至 <#{channel_id}> 使用此指令！', ephemeral=True)
+        msg = f'請至 <#{channel_id}> 使用此指令！'
+
+        interaction = getattr(ctx, 'interaction', None)
+        if interaction is not None:
+            try:
+                if interaction.response.is_done():
+                    await interaction.followup.send(msg, ephemeral=True)
+                else:
+                    await interaction.response.send_message(msg, ephemeral=True)
+            except Exception:
+                await ctx.send(msg, delete_after=3)
+        else:
+            await ctx.send(msg, delete_after=3)
         return False
+
     return True
 
 bot = commands.Bot(command_prefix='!', intents=intents)
@@ -159,8 +172,8 @@ async def test_join(ctx):
 @bot.command()
 @commands.has_permissions(administrator=True)
 async def test_leave(ctx):
-    guile = ctx.guild
-    fake_member = FakeMember('測試', guile)
+    guild = ctx.guild
+    fake_member = FakeMember('測試', guild)
     bot.dispatch('member_remove', fake_member)
 
 
