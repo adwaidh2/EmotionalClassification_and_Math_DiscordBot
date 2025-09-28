@@ -5,9 +5,7 @@ torch
 gspread
 oauth2client
 pandas
-torch
 scikit-learn
-transformers
 datasets
 openpyxl
 accelerate
