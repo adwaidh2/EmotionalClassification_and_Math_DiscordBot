@@ -18,6 +18,8 @@ pip install -r requirements.txt
 |`bot_token.example.env`|`bot_token.env`|將 Discord Bot 的 Token 放入|
 |`server_channel.example.json`|`server_channel.json`|將 Discord 頻道 ID 依提示放入|
 > 以上三個檔案皆屬於敏感資訊，請勿上傳至公開的 GitHub
+
+> 另外，若使用 Render 來線上跑 Discord Bot，請在 Render &rarr; Service &rarr; Environment Variables 新增 `DISCORD_BOT_TOKEN = <填入你的 BOT TOKEN>`
 ## Step 2：訓練模型
 ### 生成模型檔
 執行 `emo_cla.py`，待訓練完成後，可以看到終端機輸出的 `train_loss` 值是多少，它代表訓練損失，愈低表示愈準

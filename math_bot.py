@@ -9,8 +9,12 @@ from discord.ext import commands, tasks
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
 
-load_dotenv(dotenv_path='bot_token.env')
+if not os.getenv('RENDER'):
+    load_dotenv(dotenv_path='bot/token.env')
+
 TOKEN = os.getenv('DISCORD_BOT_TOKEN')
+if not TOKEN:
+    raise RuntimeError('找不到 Discord Bot Token')
 
 model = BertForSequenceClassification.from_pretrained('bert_emotion_model')
 tokenizer = BertTokenizer.from_pretrained('bert_emotion_model')
