@@ -1,7 +1,7 @@
 # 機器人建置與使用教學
 ## Step 1：環境
 ### 基礎環境
-- Python（3.12 以上）
+- Python（3.9+，建議使用 3.10 ~ 3.12）
 - Discord 伺服器（具管理員或擁有者的權限）
 - Discord Bot（擁有 Token，並將它拉進 Discord 伺服器中）
 > 不會建立 Bot 的話，可以依[這條影片](https://youtu.be/equ42VBYPrc?si=_81b7t4MDZGZwqs7)來操作
@@ -30,10 +30,28 @@ pip install -r requirements.txt
 - 調整 `emo_cla.py` 中，`training_args` 變數的值：
   - `num_train_epochs`：訓練輪數（資料愈多，此值愈小，一般在 10 以內）
   - `learning_rate`：學習率（一般在 1e-5 ~ 5e-5 間，可以試著用 2e-5 或 3e-5）
-> 若修改了訓練資料，請重新執行 `emo_cla.py` 來生成新的模型檔
+  > 若修改了訓練資料，請重新執行 `emo_cla.py` 來生成新的模型檔（.pth）
 ## Step 3：執行 Bot 與功能介紹
 ### 執行 Bot
-執行 `math_bot.py`，即可讓機器人上線
+若你是在自己電腦上跑 Discord Bot，直接執行 `math_bot.py` 即可讓機器人上線
+
+若你想要使用 Render 來跑 Discord Bot，請跟著以下步驟：
+
+（以 Background Worker 為例）
+1. 只會用到以下檔案，其他檔案不要上傳到 Render
+    - `math_bot.py`
+    - `requirements.txt`
+    - `emotional_model.pth`（模型檔，因此要先在本機訓練完，Render 只負責保證 Discord Bot 的上線）
+2. 到 Environment &rarr; Environment Variables 新增：`DISCORD_BOT_TOKEN = <貼上你的 Token>`
+3. 到 Environment &rarr; Secret Files &rarr; Add Secret File
+    - Name（檔名）：server_channel.json
+    - Contests（內容）：貼上本機 `server_channel.json` 的所有內容
+4. 將 `requirements.txt` 中，所有在 `# emo_cla.py` 底下的文字都刪除，只保留 `# math_bot.py` 下的文字
+5. 進入 你的服務 &rarr; Settings
+    - Build Command：`pip install -r requirements.txt`
+    - Start Command：`python math_bot.py`
+6. 按 Manual Deploy &rarr; Clear build cache & deploy，待 Render 建置與啟動
+7. 服務跑起來後，得進入 Logs 頁面檢查 Bot 是否有成功跑起來
 ### 功能簡介
 - **人數統計語音頻道**
   - 總人數（`TOTAL_PPL`）

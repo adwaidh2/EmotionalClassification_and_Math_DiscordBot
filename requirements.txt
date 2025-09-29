@@ -1,5 +1,10 @@
+# math_bot.py
 discord.py
 python-dotenv
+transformers
+torch
+
+# emo_cla.py
 transformers
 torch
 gspread
