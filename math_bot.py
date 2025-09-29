@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 import discord
 from discord.ext import commands, tasks
 from pathlib import Path
-from typing import Any
 
 from transformers import BertTokenizer, BertForSequenceClassification
 import torch
@@ -27,18 +26,13 @@ emotion_to_emoji = {
     'Negative': '👎'
 }
 
-def load_server_config() -> dict[str, Any]:
-    candidates: list[Path] = [Path('/etc/secrets/server_channel.json'), Path('server_channel.json')]
-
-    for cfg_path in candidates:
-        if cfg_path.exists():
-            with cfg_path.open('r', encoding='utf-8') as f:
+def load_server_config() -> dict[str, int]:
+    for p in (Path('/etc/secrets/server_channel.json'), Path('server_channel.json')):
+        if p.exists():
+            with p.open('r', encoding='utf-8') as f:
                 return json.load(f)
-    
-    raise FileNotFoundError(
-        '找不到 server_channel.json，請在 Render 上傳 Secret File，'
-        '或在本機放置 server_channel.json'
-        )
+
+    raise FileNotFoundError('找不到 server_channel.json')
 
 jdata: dict[str, int] = load_server_config()
 
